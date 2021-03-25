@@ -1,2 +1,1 @@
-# fuseml.github.io
-FuseML micro-website
+# fuse-beta.github.io

@@ -1,4 +1,34 @@
-baseURL = "https://fuseml.github.io/"
+baseURL = "https://alefesta.github.io/fuse-beta.github.io/"
 languageCode = "en-us"
-title = "My Personal Space"
-theme = "introduction"
+title = "FuseML"
+theme = "hallo"
+disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
+googleAnalytics = "G-FFKPRJHXQJ"
+
+[Author]
+    name = "Flexible Universal SErvice orchestrator for Machine Learning"
+
+[params]
+    greeting = "FuseML"
+        
+    [params.colors]
+        background = "#30BA78"
+        foreground = "#edf7ff"
+        hover = "#0C322C"
+    
+    [[params.links]]
+        iconset = "fas"
+        icon = "book"
+        title = "Docs"
+        url = "https://github.com/fuseml/fuseml/wiki"
+
+    [[params.links]]
+        icon = "github"
+        title = "Github"
+        url = "https://github.com/fuseml/fuseml"
+
+    [[params.links]]
+        iconset = "far"
+        icon = "comment-dots"
+        title = "Leave a feedback"
+        url = "https://github.com/fuseml/fuseml/issues/new/choose"
