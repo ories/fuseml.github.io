@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "FuseML"
 theme = "hallo"
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
-googleAnalytics = "G-042EY62FSH"
+googleAnalytics = "UA-193012767-1"
 
 [Author]
     name = "Flexible Universal SErvice orchestrator for Machine Learning"
