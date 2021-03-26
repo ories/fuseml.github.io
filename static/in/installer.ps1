@@ -18,18 +18,22 @@ case $(arch) in
         echo 'Current platform not yet supported'
         ;;
 esac
-regex='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
-base=https://github.com/fuseml/fuseml/releases/download && \
-string=$base/latest/fuseml-$(uname -s)-$platform
-if  $string != $regex 
-then
- curl -L $base/latest/fuseml-$(uname -s)-$platform > /tmp/fuseml && chmod +x /tmp/fuseml && sudo mv /tmp/fuseml /usr/local/bin
- exit
+base=https://github.com/fuseml/fuseml/releases/download
+LATEST=$base/latest/fuseml-$(uname -s)-$platform
+TMPDIR=$(mktemp -d)
+
+# check if there is latest release
+if wget -q --method HEAD "$LATEST"; then
+  echo "Downloading latest release..."
+  curl -L "$LATEST" -o "$TMPDIR/fuseml"
 else
- echo $base/download/v0.0.0/fuseml-$(uname -s)-$platform
- curl -L $base/v0.0.0/fuseml-$(uname -s)-$platform > /tmp/fuseml && chmod +x /tmp/fuseml && sudo mv /tmp/fuseml /usr/local/bin
- exit
+  echo "No release marked as latest, downloading fixed version..."
+  curl -L "$base/v0.0.0/fuseml-$(uname -s)-$platform" -o "$TMPDIR/fuseml"
 fi
+
+chmod +x "$TMPDIR/fuseml"
+sudo mv "$TMPDIR/fuseml" /usr/local/bin
+rm -rf "$TMPDIR"
 
 # Bash End -------------------------------------------------------------
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
