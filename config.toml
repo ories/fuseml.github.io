@@ -20,7 +20,7 @@ googleAnalytics = "UA-193012767-1"
         iconset = "fas"
         icon = "book"
         title = "Docs"
-        url = "https://github.com/fuseml/fuseml/wiki"
+        url = "https://fuseml.github.io/docs"
 
     [[params.links]]
         icon = "github"
