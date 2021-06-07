@@ -18,8 +18,8 @@ case $(arch) in
         echo 'Current platform not yet supported'
         ;;
 esac
-base=https://github.com/fuseml/fuseml/releases/download
-LATEST=$base/latest/fuseml-$(uname -s)-$platform
+base=https://github.com/fuseml/fuseml/releases
+LATEST=$base/latest
 TMPDIR=$(mktemp -d)
 textreset=$(tput sgr0) # reset the foreground colour
 red=$(tput setaf 1)
@@ -27,10 +27,14 @@ yellow=$(tput setaf 2)
 # check if there is latest release
 if wget -q --method HEAD "$LATEST"; then
   echo "Downloading latest release..."
-  curl -L "$LATEST" -o "$TMPDIR/fuseml"
+  curl -L "$LATEST/download/fuseml-installer-$(uname -s)-$platform.tar.gz" -O \
+  && tar -xvzf "fuseml-installer-$(uname -s)-$platform.tar.gz" \
+  && chmod +x fuseml-installer \
+  && sudo mv fuseml-installer /usr/local/bin/ \
+  && rm "fuseml-installer-$(uname -s)-$platform.tar.gz"
 else
   echo "No release marked as latest, downloading last pre-release version..."
-  curl -L "$base/v0.0.2/fuseml-installer-$(uname -s)-$platform.tar.gz" -O \
+  curl -L "$base/download/v0.0.2/fuseml-installer-$(uname -s)-$platform.tar.gz" -O \
   && tar -xvzf "fuseml-installer-$(uname -s)-$platform.tar.gz" \
   && chmod +x fuseml-installer \
   && sudo mv fuseml-installer /usr/local/bin/ \
