@@ -1,0 +1,208 @@
+baseURL: http://something-fresh.org/
+languageCode: en-us
+title: Hugo Fresh Theme
+theme: hugo-fresh
+googleAnalytics: # Put in your tracking code without quotes like this: UA-XXXXXX...
+# Disables warnings
+disableKinds:
+- taxonomy
+- taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+params:
+  # Open graph allows easy social sharing. If you don't want it you can set it to false or just delete the variable
+  openGraph: true
+  # Used as meta data; describe your site to make Google Bots happy
+  description:
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+    image: logos/fuselogo.png
+    link: /
+  font:
+    name: "Lato"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: MLOps. Done right.
+    # Hero subtitle (optional)
+    subtitle: Manage your MLOps pipelines with FuseML and focus your Data, AI and OPS teams on actual problems, not infrastructure.
+    # Button text
+    buttontext: Get started
+    # Where the main hero button links to
+    buttonlink: "#"
+    # Hero image (from static/images/___)
+    image: illustrations/fuseml-mlops-anim-fade.gif
+    # Footer logos (from static/images/logos/clients/___.svg)
+    clientlogos:
+    - intel
+    - mlflow
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Features
+    sublinks:
+    - title: Rapid operations
+      url: "#section1"
+    - title: Unlesh your MLOPS
+      url: "#section2"
+    - title: Dropdown item
+      url: /
+  - title: Join us on Slack
+    url: "https://join.slack.com/t/fuseml/shared_invite/zt-rcs6kepe-rGrMzlj0hrRlalcahWzoWg"
+  - title: Project
+    sublinks:
+    - title: Contribute
+      url: https://github.com/fuseml
+    - title: User meetups
+      url: https://www.youtube.com/channel/UCQLoLTikJDDMXvywWd27FBg
+  - title: Schedule a Demo
+    url: https://calendly.com/ories 
+#  - title: Log in
+#    url: /
+#  - title: Sign up
+#    url: /
+#    button: true
+#  sidebar:
+   # Logo (from /images/logos/___.svg)
+#   logo: fresh-square
+#   sections:
+#   - title: User
+#     icon: user
+#     links:
+#     - text: Profile
+#       url: /
+#     - text: Account
+#       url: /
+#     - text: Settings
+#       url: /
+#   - title: Messages
+#     icon: envelope
+#     links:
+#     - text: Inbox
+#       url: /
+#     - text: Compose
+#       url: /
+#   - title: Images
+#     icon: image
+#     links:
+#     - text: Library
+#       url: /
+#     - text: Upload
+#       url: /
+#   - title: Settings
+#     icon: cog
+#     links:
+#     - text: User settings
+#       url: /
+#     - text: App settings
+#       url: /
+#  sidebar:
+  section1:
+    title: Rapid operations for data teams
+#    subtitle: with great responsibility
+    tiles:
+    - title: 3 step install
+      icon: laptop-cloud
+      text: Get started with MLOPS in as little as 3 steps
+      url: https://
+      buttonText: Get started
+    - title: Consistence
+      icon: mouse-globe
+      text: FuseML will adapt to your development environment
+      url: /
+      buttonText: See Demo
+    - title: Add-ons & plugins
+      icon: plug-cloud
+      text: This is some explanatory text that is on two rows
+      url: /
+      buttonText: Get started
+  section3:
+    title: MLOps doesn't have to be complicated
+    subtitle: Master your MLOps pipelines with FuseML
+    image: installer.gif
+    buttonText: Get started
+    buttonLink: "#"
+  section2:
+    title: You're here because you want the best
+    subtitle: And we know it
+    features:
+    - title: Powerful and unified interface
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: Cross-device synchronisation
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: doc-sync
+    - title: Nomad system
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: mobile-feed
+  section4:
+    title: Our Clients love us!
+    subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+    clients:
+    - name: Irma Walters
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Accountant
+      img: 1
+    - name: John Bradley
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Financial Analyst
+      img: 2
+    - name: Gary Blackman
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: HR Manager
+      img: 3
+  section5: true
+  footer:
+    # Logo (from /images/logos/___)
+    logo: fuselogo.png
+    # Social Media Title
+    socialmediatitle: Follow Us
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/lucperkins/github-fresh
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://dribbble.com/#
+      icon: dribbble
+    - link: https://facebook.com/#
+      icon: facebook
+    - link: https://twitter.com/lucperkins
+      icon: twitter
+    - link: https://bitbucket.org/#
+      icon: bitbucket
+    bulmalogo: true
+    quicklinks:
+      column1:
+        title: "Product"
+        links:
+        - text: Discover features
+          link: /
+        - text: Why choose our product?
+          link: /
+        - text: Compare features
+          link: /
+        - text: Our roadmap
+          link: /
+        - text: AGB
+          link: /agb
+      column2:
+        title: "Docs"
+        links:
+        - text: Get started
+          link: /
+        - text: User guides
+          link: /
+        - text: Admin guide
+          link: /
+        - text: Developers
+          link: /
+      column3:
+        title: "Blog"
+        links:
+        - text: Latest news
+          link: /blog/first
+        - text: Tech articles
+          link: /blog/second
